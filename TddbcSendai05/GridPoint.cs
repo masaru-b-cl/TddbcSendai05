@@ -18,14 +18,14 @@ namespace TddbcSendai05
       return $"({X},{Y})";
     }
 
-    public object HasSameCoordinatesWith(GridPoint other)
+    public bool HasSameCoordinatesWith(GridPoint other)
     {
       if (this.X != other.X) return false;
       if (this.Y != other.Y) return false;
       return true;
     }
 
-    public object IsNeighborOf(GridPoint other)
+    public bool IsNeighborOf(GridPoint other)
     {
       if (
         (IsNeighbor(this.X, other.X) && this.Y == other.Y)
