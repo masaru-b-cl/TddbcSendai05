@@ -21,7 +21,7 @@ namespace TddbcSendai05.Test
     }
 
     [TestCase]
-    public void X軸が1大きい座標は隣り合っている()
+    public void X座標が1大きい座標は隣り合っている()
     {
       var gp1 = new GridPoint(1, 2);
       var gp2 = new GridPoint(2, 2);
@@ -30,7 +30,7 @@ namespace TddbcSendai05.Test
     }
 
     [TestCase]
-    public void X軸が2大きい座標は隣り合っていない()
+    public void X座標が2大きい座標は隣り合っていない()
     {
       var gp1 = new GridPoint(1, 2);
       var gp2 = new GridPoint(3, 2);
@@ -39,12 +39,30 @@ namespace TddbcSendai05.Test
     }
 
     [TestCase]
-    public void X軸が1小さい座標は隣り合っている()
+    public void X座標が1小さい座標は隣り合っている()
     {
       var gp1 = new GridPoint(1, 2);
       var gp2 = new GridPoint(0, 2);
 
       gp1.IsNeighborOf(gp2).Is(true);
+    }
+
+    [TestCase]
+    public void Y座標が1大きい座標は隣り合っている()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(1, 3);
+
+      gp1.IsNeighborOf(gp2).Is(true);
+    }
+
+    [TestCase]
+    public void X座標とY座標が共に1大きい座標は隣り合っていない()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(2, 3);
+
+      gp1.IsNeighborOf(gp2).Is(false);
     }
   }
 }

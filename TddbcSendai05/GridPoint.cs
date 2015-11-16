@@ -27,7 +27,10 @@ namespace TddbcSendai05
 
     public object IsNeighborOf(GridPoint other)
     {
-      if (IsNeighbor(this.X, other.X)) return true;
+      if (
+        IsNeighbor(this.X, other.X)
+        ^ IsNeighbor(this.Y, other.Y)
+        ) return true;
 
       return false;
     }
