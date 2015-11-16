@@ -64,5 +64,14 @@ namespace TddbcSendai05.Test
 
       gp1.IsNeighborOf(gp2).Is(false);
     }
+
+    [TestCase]
+    public void Y座標が1大きくX座標が2大きい座標は隣り合っていない()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(3, 3);
+
+      gp1.IsNeighborOf(gp2).Is(false);
+    }
   }
 }
