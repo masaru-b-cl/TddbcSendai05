@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using NUnit.Framework;
+
+namespace TddbcSendai05.Test
+{
+  [TestFixture]
+  public class 格子点が隣り合っているか判定する
+  {
+    [TestCase]
+    public void 同じ座標は隣り合っていない()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(1, 2);
+
+      gp1.IsNeighborOf(gp2).Is(false);
+    }
+
+    [TestCase]
+    public void X軸が1大きい座標は隣り合っている()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(2, 2);
+
+      gp1.IsNeighborOf(gp2).Is(true);
+    }
+
+    [TestCase]
+    public void X軸が2大きい座標は隣り合っていない()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(3, 2);
+
+      gp1.IsNeighborOf(gp2).Is(false);
+    }
+
+    [TestCase]
+    public void X軸が1小さい座標は隣り合っている()
+    {
+      var gp1 = new GridPoint(1, 2);
+      var gp2 = new GridPoint(0, 2);
+
+      gp1.IsNeighborOf(gp2).Is(true);
+    }
+  }
+}

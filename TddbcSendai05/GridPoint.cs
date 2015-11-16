@@ -24,5 +24,12 @@ namespace TddbcSendai05
       if (this.Y != other.Y) return false;
       return true;
     }
+
+    public object IsNeighborOf(GridPoint other)
+    {
+      if (other.X == this.X + 1 || other.X == this.X - 1) return true;
+
+      return false;
+    }
   }
 }
