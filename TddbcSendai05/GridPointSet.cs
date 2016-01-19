@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace TddbcSendai05
 {
@@ -21,6 +22,19 @@ namespace TddbcSendai05
         return true;
       }
       return false;
+    }
+
+    public bool IsConnected
+    {
+      get
+      {
+        var gps = new[] { gridPoint1, gridPoint2 };
+        if (gps.Any(gp => gp == null)) return false;
+
+        if (gridPoint1.IsNeighborOf(gridPoint2)) return true;
+
+        return false;
+      }
     }
   }
 }

@@ -51,6 +51,7 @@
     <Compile Include="格子点が隣り合っているか判定する.cs" />
     <Compile Include="格子点を生成する.cs" />
     <Compile Include="格子点集合が指定した格子点を含むか判定する.cs" />
+    <Compile Include="格子点集合が連結しているか判定する.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TddbcSendai05\TddbcSendai05.csproj">
